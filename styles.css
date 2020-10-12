@@ -10,3 +10,11 @@
     height: 70px;
     width: 70px;
 }
+
+.square {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
