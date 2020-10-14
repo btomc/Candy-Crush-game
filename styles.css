@@ -1,9 +1,16 @@
+body {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .grid {
     height: 560px;
     width: 560px;
     display: flex;
     flex-wrap: wrap;
     background-color: transparent;
+    /* margin-left: 40px; */
 }
 
 .grid div {
@@ -18,5 +25,17 @@
     justify-content: center;
 }
 
+.score-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.score {
+   font-size: 30px;
+}
+
+h3 {
+    font-size: 30px;
+}
 
