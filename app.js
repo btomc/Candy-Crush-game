@@ -92,6 +92,22 @@ document.addEventListener('DOMContentLoaded', () => {
         } else squares[squareIdBeingDragged].innerText = typeBeingDragged
     }
 
+    // drop candies once some have been cleared
+    function moveDown() {
+        for (i = 0; i < 55; i++) {
+            if (squares[i + width].innerText === '') {
+                squares[i + width].innerText = squares[i].innerText
+                squares[i].innerText = ''
+                const firstRow = [0, 1, 2, 3, 4, 5, 6, 7]
+                const isFirstRow = firstRow.includes(i)
+                if (isFirstRow && squares[i].innerText === '') {
+                    let randomType = Math.floor(Math.random() *candyTypes.length)
+                    squares[i].innerText = candyTypes[randomType]
+                }
+            }
+        }
+    }
+
     // Checking for matches
     // check for row of Four
     function checkRowForFour() {
@@ -173,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkColumnForThree()
 
     window.setInterval(function(){
+        moveDown()
         checkRowForFour()
         checkColumnForFour()
         checkRowForThree()
