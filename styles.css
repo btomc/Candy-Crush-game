@@ -1,7 +1,72 @@
 body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 570px) {
+    body {
+        width: 120%;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    body {
+        width: 140%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    body {
+        width: 160%;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    body {
+        width: 180%;
+    }
+}
+
+.container {
     display: flex;
     justify-content: space-evenly;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 100vh;
+    background: url(./images/bg-2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    align-items: center;
+    /* padding-top: 2rem; */
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.5) 100%), 
+                linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 100%);
+}
+
+
+@media screen and (max-width: 780px) {
+    .container {
+        flex-direction: column;
+        height: 90%;
+        padding-top: 0;
+    }
+}
+
+.grid-wrap {
+    display: flex;
+    align-items: flex-start;
+    z-index: 999;
 }
 
 .grid {
@@ -11,31 +76,38 @@ body {
     flex-wrap: wrap;
     background-color: transparent;
     /* margin-left: 40px; */
+    min-width: 560px;
+    transform: scale(.93);
 }
 
 .grid div {
     height: 70px;
     width: 70px;
+    transform: scale(.93);
 }
 
 .square {
-    font-size: 40px;
+    /* font-size: 40px; */
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(.93);
 }
 
 .score-board {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 99;
 }
 
-.score {
-   font-size: 30px;
+.score-board p {
+    font-size: 30px;
+    margin: 0;
 }
 
 h3 {
     font-size: 30px;
+    margin-bottom: 1rem;
 }
 
